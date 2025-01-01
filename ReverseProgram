@@ -3,6 +3,8 @@
 
 using System;
 using System.Linq;
+using System.Text.RegularExpressions;
+using System.Text;
 public class HelloWorld
 {
     public static void Main(string[] args)
@@ -26,8 +28,8 @@ public class HelloWorld
         string name = "sanket";
         string stuName = new string(name.Reverse().ToArray());
         string withLinque = new string(name.ToCharArray().Reverse().ToArray());
-        Console.Write(stuName);
-        Console.WriteLine(withLinque);
+        // Console.Write(stuName);
+        // Console.WriteLine(withLinque);
         
         void Reversestr(string[] arrstr){
             string[] newArray = new string[arrstr.Length];
@@ -35,7 +37,7 @@ public class HelloWorld
             foreach(string strs in arrstr)
             {
                 // newArray[i]= new string(strs.Reverse().ToArray);
-                Console.WriteLine(new string(strs.ToCharArray().Reverse().ToArray()));
+                // Console.WriteLine(new string(strs.ToCharArray().Reverse().ToArray()));
                 // i++;
             }
             // Console.Write(string.Join(newArray));
@@ -45,6 +47,25 @@ public class HelloWorld
         string[] strArray = wish.Split(" ");
         Reversestr(strArray);
         
+        // Remove Special Chareter from string
+        string panString = "hi gokul #$% how are you";
+        string textformat = Regex.Replace(panString,@"[#$%]","");
+        Console.WriteLine(textformat);
+        
+        // Remove non alpha numeric chreter
+        string apnustr = "Sam{}%33sd    How are you";
+        string normalText = Regex.Replace(apnustr,@"[^a-zA-Z0-9\\s]","");
+        Console.WriteLine(normalText);
+        
+        string removePanch = "how. areAADFD! your, rk";
+        string okstring = Regex.Replace(removePanch,@"[\p{P}\sA-Z]","");
+        Console.WriteLine(okstring);
+        
+        
+        //Remove dblicate chareter from string
+        string dublicateChar = "abaabccdd";
+        string removedubstr = new string(dublicateChar.Distinct().ToArray());
+        Console.Write(removedubstr);
         
     }
 }
