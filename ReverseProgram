@@ -66,6 +66,53 @@ public class HelloWorld
         string dublicateChar = "abaabccdd";
         string removedubstr = new string(dublicateChar.Distinct().ToArray());
         Console.Write(removedubstr);
+
+
+ string str= "Racecar";
+       int left = 0;
+       bool status = true;
+       int right = str.Length-1;
+       while(left<right){
+       if(char.ToLower(str[left])!=char.ToLower(str[right])){
+               status = false;
+           }
+           left++;
+           right--;
+       }
+       Console.WriteLine(status);
+       
+       bool checkpal(string str){
+        for(int i=0,j=str.Length-1;i<j;i++,j--){
+            if (char.ToLower(str[i]) != char.ToLower(str[j]))
+            {
+                return false;
+            }
+        }
+        return true;
+    }
+    bool chek = checkpal("sam");
+    Console.WriteLine(chek);
+    
+    string sentence = "vivek how are you";
+    string[] arr = sentence.Split(" ");
+    string newstr = string.Join(" ",arr.Reverse());
+    //  string reversedSentence = string.Join(" ", arr.Reverse()); 
+    //  Console.Write(newstr);
+     
+    string rk ="How are you rk";
+    string[] arrstr= rk.Split(" ");
+    string[] result = new string[arrstr.Length];
+    
+    
+    for(int j= 0,i=arrstr.Length-1;i>=0;i--,j++){
+        result[j]=arrstr[i];
+    }
+    rk = string.Join(" ",result);
+     //foreach(string st in arrstr){
+         Console.Write(rk);
+    // }
+     
+     
         
     }
 }
