@@ -1,0 +1,34 @@
+### Reverse String Program
+
+// Online C# Editor for free
+// Write, Edit and Run your C# code using C# Online Compiler
+
+using System;
+using System.Linq;
+public class HelloWorld
+{
+    public static void Main(string[] args)
+    {
+        // Method 1 for reverce Array
+        string str = "gokul";
+        string str2 = new string(str.ToCharArray().Reverse().ToArray()); 
+        // Console.Write(str2);
+        //Method 2 fro reverce Array
+        string strr= "gokul";
+        char[] result= new char[strr.Length];
+        char[] charArray = strr.ToCharArray();
+        //int j=0;
+        for(int j =0, i=charArray.Length-1;i>=0;i--,j++){
+            result[j]=charArray[i];
+        }
+        
+        // Console.Write(new string(result));
+        
+        // Thaired Approch
+        string name = "sanket";
+        string stuName = new string(name.Reverse().ToArray());
+        string withLinque = new string(name.ToCharArray().Reverse().ToArray());
+        Console.Write(stuName);
+        Console.WriteLine(withLinque);
+    }
+}
